@@ -1,0 +1,62 @@
+Zookeeper installation process:
+
+1. Make sure you have java installed on your system.
+
+2. Install the zookeeper installation file from the website
+	Link :  https://www.apache.org/dyn/closer.cgi/zookeeper/
+		.Click on http://www-eu.apache.org/dist/zookeeper/
+		.Various versions of zookeeper are avaliable 
+		.Go for any version excpet for beta version,so the one before
+		 the beta version should be preffered.
+		.Download the tar.gz of the zookeeper version.
+
+3. Open the terminal,type the command given below
+	$ tar -zxf zookeeper-3.4.13.tar.gz
+	$ cd zookeeper-3.4.13
+	$ mkdir data
+
+4. Edit the configuration file,again back to the terminal
+	$vi conf/zoo.cfg (We here use vim to edit the configuration file)
+
+5. A black screen appears on pressing enter with tilde(~) symbol at the start of every line
+
+6. Press "I" to modify the configuration file.
+
+7. Now we set some parameters
+	tickTime = 2000
+	dataDir = /path/to/zookeeper/data
+	clientPort = 2181
+	initLimit = 5
+	syncLimit = 2
+
+8. After typing is done, press "Esc" this should take you the bottom of screen
+   in the left corner
+
+9. If a semicolon appears on the left corner then okay if not then with the 
+   shift button get the semicolon
+
+10. Press x and enter ,this will exit from the vim and get back you to the 
+    terminal again.
+
+11. Starting the zookeeper server,by following command(Make sure you are in the zookeeper folder and not in the data folder which we created in the zookeeper folder)
+	$ bin/zkServer.sh start
+     
+	This will get some text on the terminal,
+	and in the end you will see a message Starting zookeeper...STARTED
+
+12. To start client 
+	$ bin/zkCli.sh
+	
+	This connects you the zookeeper server,
+	A welcome message can be seen on connecting to the server.
+	
+	Welcome to Zookeeper! 	
+	
+
+13. Stop the server everytime once when you are done with all operations by the following command.
+	$ bin/zkServer.sh stop
+
+14. Doneeeeeeeeeeeeeeeeeeeeeeeeeeee !!!!!!!!!!!!!!!!!!!!!!!!!!!
+   
+
+
